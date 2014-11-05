@@ -16,6 +16,23 @@ shell 学习心得
 
         这样就可以将参数通过终端传递给$n,然后在filename.sh 脚本中就会得到相应的参数,并执行程序.
 
+           <filename.sh代码>  
+
+
+#! /bin/bash 
+
+echo "file name: $0"
+echo "first parameter: $1"
+echo "second parameter: $2"
+echo "third parameter: $3"
+echo "quoted values: $@"
+echo "quoted values: $*"
+echo "total number of parameter: $#"
+echo "\"\$@\": " "$@"
+echo "\"\$*\":" "$*"
+
+
+
      <$@与$*的区别> 都表示传递给函数或脚本的所有参数,不被双引号包含时,都以"$1" "$2"..."$n"的形式输出所有参数(类似c里面的数组).
 
                     当它们被双引号包含时,"$*"会将所有的参数作为一个整体,以"$1 $2 … $n"的形式输出所有参数；
